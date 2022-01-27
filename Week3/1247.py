@@ -11,12 +11,12 @@ def find_path(n, curr, last, array, visited):
     if len(dis) > 0:
         return min(dis)
     else:
-        return abs(a[n-2] - a[curr]) + abs(a[n-1] - a[curr + 1])
+        return new_total + abs(a[n-2] - a[curr]) + abs(a[n-1] - a[curr + 1])
 
 
 T = int(input())
 # 여러개의 테스트 케이스가 주어지므로, 각각을 처리합니다.
-for te in range(1, T + 1):
+for te in range(1, 1 + 1):
     n = int(input())
     a = list(map(int, input().split()))
 
@@ -25,5 +25,3 @@ for te in range(1, T + 1):
 
     distance = find_path(n * 2 + 4, 0, 0, a, visited)
     print(f'#{te} {distance}')
-
-#실패에~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
