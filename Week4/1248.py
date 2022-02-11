@@ -4,14 +4,14 @@ for te in range(1, T + 1):
     points_n, link, first, second = map(int, input().split())
     arr = list(map(int, input().split()))
 
-    first_list = set([])
-    second_list = set([])
+    first_list = []
+    second_list = []
     moved = 1
     while moved:
         moved = 0
         for i in range(link * 2 - 1, -1, -2):
             if arr[i] == first:
-                first_list.add(arr[i - 1])
+                first_list.append(arr[i - 1])
                 first = arr[i - 1]
                 moved = 1
     moved = 1
@@ -19,11 +19,11 @@ for te in range(1, T + 1):
         moved = 0
         for i in range(link * 2 - 1, -1, -2):
             if arr[i] == second:
-                second_list.add(arr[i - 1])
+                second_list.append(arr[i - 1])
                 second = arr[i - 1]
                 moved = 1
 
-    lowest_top = list(set.intersection(first_list, second_list))[0]
+    lowest_top = list(set.intersection(set(first_list), set(second_list)))[0]
     tree_list = [lowest_top]
     next_list = [0]
     total = 1
