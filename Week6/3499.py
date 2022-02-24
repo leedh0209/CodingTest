@@ -9,10 +9,10 @@ for te in range(1, T + 1):
     fir = arr[0:n // 2]
     sec = arr[n // 2:n]
 
-    print(f'#{te}', end=' ')
+    stri = ''
     for i in range(n // 2 + 1):
         if i < len(fir):
-            print(fir[i], end=' ')
+            stri += fir[i] + ' '
         if i < len(sec):
-            print(sec[i], end=' ')
-    print()
+            stri += sec[i] + ' '
+    print(f'#{te} {stri}')
